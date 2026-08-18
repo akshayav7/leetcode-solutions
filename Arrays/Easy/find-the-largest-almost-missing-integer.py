@@ -18,16 +18,13 @@ class Solution:
         if k == n:
             return maxi
         
-
-        if mpp[nums[0]] == 1 and mpp[nums[n-1]] == 1:
-            return max(nums[0] , nums[n-1])
-        elif mpp[nums[0]] > 1 and mpp[nums[n-1]] == 1:
-            return nums[n-1]
-        elif mpp[nums[0]] == 1 and mpp[nums[n-1]] > 1:
-            return nums[0]
-        else:
-            return -1
-
+        ans = -1
+        if mpp[nums[0]] == 1:
+            ans = max(ans , nums[0])
+        
+        if mpp[nums[n-1]] == 1:
+            ans = max(ans , nums[n-1])
+        return ans
             
 
 
